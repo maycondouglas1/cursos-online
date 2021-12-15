@@ -1,0 +1,58 @@
+﻿@model IEnumerable<VireiDev.Models.TurmaModels>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<link href="~/Content/Site.css" rel="stylesheet" />
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DescricaoTurma)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QtdDeAlunos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Turno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdCurso)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescricaoTurma)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QtdDeAlunos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsActive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Turno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdCurso)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdTurma }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdTurma }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdTurma })
+        </td>
+    </tr>
+}
+
+</table>
